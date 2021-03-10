@@ -267,6 +267,19 @@ if (isset($_GET["quest"])) {
 		$json_string = json_encode($json);
 		echo $json_string;
 	}
+	// VER SI HAY DIARIO DUPLICADOS
+	if ($_GET["quest"] == "conectado") {
+		$user="uotryowypietcsd1";
+		$pass="dSlFzxmVRhZsPw0ilLDx";
+		$server="bv6xput9wz5gqtoj2g9f-mysql.services.clever-cloud.com";
+		$db="bv6xput9wz5gqtoj2g9f";
+		try {
+			$con=mysqli_connect($server, $user, $pass, $db, 3306);
+			return $con;
+		} catch (\Throwable $th) {
+			return 'no hay';
+		}
+	}
 }
 // ----------------------------------------- POST -------------------------------------- //
 if (isset($_POST["quest"])) {
